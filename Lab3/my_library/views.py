@@ -1,9 +1,4 @@
 ﻿# Create your views here.
-#from django.shortcuts import render
-#from django.http import HttpResponse
-#from django import forms
-#from django.contrib.auth.forms import UserCreationForm
-#from django.http import HttpResponseRedirect
 from django.template import Context
 from django.shortcuts import render_to_response
 from models import Book,Author
@@ -85,4 +80,6 @@ def change_book(request):
         author.save()
     c = Context({"id2":id2,"author":author})
     return render_to_response("change_book.html",c)
+def hello(request):
+    return render_to_response("Hello World!")
     
