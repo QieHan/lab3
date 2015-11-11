@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全部书籍</title>
+<style>
+a:link {color:#00FFFF;}    /* 未被访问的链接 */
+a:visited {color:#000000;} /* 已被访问的链接 */
+a:hover {color:#00FF00;}   /* 鼠标指针移动到链接上 */
+a:active {color:#0000FF;}  /* 正在被点击的链接 */
+a.under {
+	text-decoration:none;
+}
+p {background-color: rgb(250,0,255)}
+p.no2 {
+	background-color: gray;
+	padding: 20px;
+	text-align: center;
+	width:1000px;
+}
+</style>
+</head>
+
+<body>
+<div align="center">
+    <p class="no2"><font color="#00FF00"/>全部书籍</p>
+    <table align = "center">
+    {% for Book in book_list %}
+    <tr bgcolor="#CCCCCC" height="40">
+      <th width="800"><a class=under href="/show_book/?id={{Book.id}}" >{{Book.Title}}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class=under href="/delete_book/?id={{Book.id}}">删除</a>
+      &nbsp;｜&nbsp;
+      <a class=under href="/change_book/?id={{Book.id}}">更新</a>    </th>
+    {% endfor %}
+    </tr>
+    </table><br><br>
+    <a href="/first_page/">返回首页</a>
+</div>
+</body>
+</html>
+

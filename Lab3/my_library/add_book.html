@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加书籍</title>
+<style>
+a:link {color:#00FFFF;}    /* 未被访问的链接 */
+a:visited {color:#00FF00;} /* 已被访问的链接 */
+a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+a:active {color:#0000FF;}  /* 正在被点击的链接 */
+a.under {
+	text-decoration:none;
+}
+p {background-color: rgb(250,0,255)}
+p.no2 {
+	background-color: gray;
+	padding: 20px;
+	text-align: center;
+	width:1000px;
+}
+</style>
+</head>
+
+<body>
+<div align="center">
+    <p class="no2"><font color="#00FF00"/>添加书籍</p>
+    <form action="/book_add/" method="post">
+    {% csrf_token %}
+    <table>
+    <tr bgcolor="#FFCC66" height="40"><font color="#000000"/>
+        <th><font color="#000000"/>ISBN</th><th><font color="#000000"/>书名</th><th><font color="#000000"/>作者ID</th><th><font color="#000000"/>出版社</th><th><font color="#000000"/>出版日期</th><th><font color="#000000"/>价格</th>
+    </tr>
+    <tr height="30">
+        <td><input name="ISBN"  type="text"></td>
+        <td><input name="Title" type="text"></td>
+        <td><input name="AuthorID" type="text"></td> 
+        <td><input name="Publisher" type="text"></td> 
+        <td><input name="PublishDate" type="text"></td>
+        <td><input name="Price" type="text"></td>  
+    </tr>
+    </table>
+    <table>
+    <tr>
+     <td><input type="submit" value="保存"></td> 
+     <td><input type="reset" value="重填"></td>
+    </tr>
+    </table>
+    </form>
+    <br><br>
+    <a href="/first_page/">返回首页</a>
+</div>
+</body>
+</html>

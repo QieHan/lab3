@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>更新书籍信息</title>
+<style>
+a:link {color:#00FFFF;}    /* 未被访问的链接 */
+a:visited {color:#00FF00;} /* 已被访问的链接 */
+a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+a:active {color:#0000FF;}  /* 正在被点击的链接 */
+a.under {
+	text-decoration:none;
+}
+p {background-color: rgb(250,0,255)}
+p.no2 {
+	background-color: gray;
+	padding: 20px;
+	text-align: center;
+	width:1000px;
+}
+p.no1 {
+	background-color:#CCC;
+	padding: 10px;
+	text-align: center;
+	width:1000px;
+}
+</style>
+</head>
+
+<body>
+    <div align="center">
+<p class="no2"><font color="#00FF00"/>更新信息</p>
+<form method="post">
+    {% csrf_token %}
+    <p class="no1"><font color="#000000"/>书籍信息</p>
+    <table align = "center" width="952">
+    <tr bgcolor="#FFCC66" height="40">
+        <th width="317" align="center"><font color="#000000"/>出版社</th><th width="317" align="center"><font color="#000000"/>出版日期</th><th width="317" align="center"><font color="#000000"/>价格</th>
+    </tr>
+    <tr height="30">
+        <td align="center"><input name="Publisher" type="text" value={{id2.Publisher}} style="width:317px"></td> 
+      <td align="center"><input name="PublishDate" type="text" value={{id2.PublishDate}} style="width:317px"></td>
+      <td align="center"><input name="Price" type="text" value={{id2.Price}} style="width:317px"></td>
+    </tr>
+    </table>
+    <p class="no1"><font color="#000000"/>作者信息</p>
+    <table align = "center" width="952">
+    <tr bgcolor="#FFCC66" height="40">
+        <th align="center"><font color="#000000"/>ID</th><th align="center"><font color="#000000"/>姓名</th><th align="center"><font color="#000000"/>年龄</th><th align="center"><font color="#000000"/>国籍</th>
+    </tr>
+      <td align="center"><input name="AuthorID" type="text" value={{author.AuthorID}} style="width:237px"></td>
+        <td align="center"><input name="Name" type="text" value={{author.Name}} style="width:237px"></td>
+        <td align="center"><input name="Age" type="text" value={{author.Age}} style="width:237px"></td> 
+        <td align="center"><input name="Country" type="text" value={{author.Country}} style="width:237px"></td> 
+    </tr>
+  </table><br/>
+    <input type="submit" value="确认更新">
+    </form><br><br>
+    <a href="/first_page/">返回首页</a>
+</body>
+</html>
